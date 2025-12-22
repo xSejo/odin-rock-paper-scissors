@@ -11,16 +11,10 @@
         let user choose between objects ROCK/PAPER/SCISSORS
         assign random object to the computer
         */
-      function getComputerChoice() {
-        const computerChoice = Math.floor(Math.random() * 3) + 1;
-        if (computerChoice === 1) {
-          return "rock";
-        } else if (computerChoice === 2) {
-          return "paper";
-        } else {
-          return "scissors";
-        }
-      }
+      function getComputerChoice(){
+        const computerChoice = ['rock', 'paper', 'scissors'];
+        return computerChoice[Math.floor(Math.random() * computerChoice.length)];
+}
 
       function getUserChoice() {
         const userChoice = prompt("Choose either ROCK/PAPER/SCISSORS");

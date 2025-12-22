@@ -23,7 +23,25 @@
     while(!validChoices.includes(humanChoice)){
         humanChoice = prompt('Invalid choice! Enter rock, paper, or scissors: ').toLowerCase();
     }
-    return humanChoice;
+
+    function playRound(humanChoice, computerChoice){
+    if(humanChoice === computerChoice){
+        tieCounter++;
+        console.log(`It's a tie`);
+        return `It's a tie!`;
+    }
+    else if((humanChoice === 'rock' && computerChoice === 'scissors') || 
+            (humanChoice === 'paper' && computerChoice === 'rock') || 
+            (humanChoice === 'scissors' && computerChoice === 'paper')){
+                humanScore++;
+                console.log(`You win ${humanChoice} beats ${computerChoice}`);
+                return `You win ${humanChoice} beats ${computerChoice}`;
+            }
+    else{
+        computerScore++;
+        console.log(`You lose ${computerChoice} beats ${humanChoice}`)
+        return `You lose ${computerChoice} beats ${humanChoice}`;
+    }
 }
 
       console.log(getComputerChoice());

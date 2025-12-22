@@ -16,16 +16,15 @@
         return computerChoice[Math.floor(Math.random() * computerChoice.length)];
 }
 
-      function getUserChoice() {
-        const userChoice = prompt("Choose either ROCK/PAPER/SCISSORS");
-        if (userChoice === "rock") {
-          return userChoice;
-        } else if (userChoice === "paper") {
-          return userChoice;
-        } else if (userChoice === "scissors") {
-          return userChoice;
-        }
-      }
+      function getHumanChoice(){
+    const validChoices = ['rock', 'paper', 'scissors']
+    let humanChoice = prompt('Enter rock, paper, or scissors: ').toLowerCase();
+    
+    while(!validChoices.includes(humanChoice)){
+        humanChoice = prompt('Invalid choice! Enter rock, paper, or scissors: ').toLowerCase();
+    }
+    return humanChoice;
+}
 
       console.log(getComputerChoice());
       console.log(getUserChoice());

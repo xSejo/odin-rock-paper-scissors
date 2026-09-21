@@ -14,7 +14,7 @@ function getHumanChoice() {
 
   while (!validChoices.includes(humanChoice)) {
     humanChoice = prompt(
-      "Invalid choice! Enter rock, paper, or scissors: "
+      "Invalid choice! Enter rock, paper, or scissors: ",
     ).toLowerCase();
   }
 
@@ -40,16 +40,21 @@ function playRound(humanChoice, computerChoice) {
     return `You lose ${computerChoice} beats ${humanChoice}`;
   }
 }
+
 function playGame() {
   humanScore = 0;
   computerScore = 0;
   tieCounter = 0;
 
-  for (let i = 1; i <= 5; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-  }
+  // for (let i = 1; i <= 5; i++) {
+  //   const humanSelection = getHumanChoice();
+  //   const computerSelection = getComputerChoice();
+  //   playRound(humanSelection, computerSelection);
+  // }
+  /**? Easier Testing*/
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  playRound(humanSelection, computerSelection);
 
   if (humanScore > computerScore) {
     return `You win!
@@ -68,6 +73,22 @@ function playGame() {
             You tied against computer ${tieCounter} times`;
   }
 }
+
+const rockBtn = document.querySelector(".rockBtn");
+const paperBtn = document.querySelector(".paperBtn");
+const scissorsBtn = document.querySelector(".scissorsBtn");
+
+rockBtn.addEventListener((click) => {
+  playRound("rock");
+});
+
+paperBtn.addEventListener((click) => {
+  playRound("paper");
+});
+
+scissorsBtn.addEventListener((click) => {
+  playRound("scissors");
+});
 
 let humanScore = 0;
 let computerScore = 0;

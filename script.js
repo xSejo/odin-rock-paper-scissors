@@ -1,27 +1,11 @@
-/*PSEUDOCODE:
-              let user choose between objects ROCK/PAPER/SCISSORS
-              assign random object to the computer
-              */
-
 function getComputerChoice() {
   const computerChoice = ["rock", "paper", "scissors"];
   return computerChoice[Math.floor(Math.random() * computerChoice.length)];
 }
 
-function getHumanChoice() {
-  const validChoices = ["rock", "paper", "scissors"];
-  let humanChoice = prompt("Enter rock, paper, or scissors: ").toLowerCase();
+function playRound(humanChoice) {
+  const computerChoice = getComputerChoice();
 
-  while (!validChoices.includes(humanChoice)) {
-    humanChoice = prompt(
-      "Invalid choice! Enter rock, paper, or scissors: ",
-    ).toLowerCase();
-  }
-
-  return humanChoice;
-}
-
-function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
     tieCounter++;
     console.log(`It's a tie!`);
@@ -46,13 +30,8 @@ function playGame() {
   computerScore = 0;
   tieCounter = 0;
 
-  // for (let i = 1; i <= 5; i++) {
-  //   const humanSelection = getHumanChoice();
-  //   const computerSelection = getComputerChoice();
-  //   playRound(humanSelection, computerSelection);
-  // }
-  /**? Easier Testing*/
-  const humanSelection = getHumanChoice();
+  /**? Removed for-loop for Easier Testing*/
+  const humanSelection = humanChoice;
   const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
 
@@ -73,22 +52,13 @@ function playGame() {
             You tied against computer ${tieCounter} times`;
   }
 }
-
 const rockBtn = document.querySelector(".rockBtn");
 const paperBtn = document.querySelector(".paperBtn");
 const scissorsBtn = document.querySelector(".scissorsBtn");
 
-rockBtn.addEventListener((click) => {
-  playRound("rock");
-});
-
-paperBtn.addEventListener((click) => {
-  playRound("paper");
-});
-
-scissorsBtn.addEventListener((click) => {
-  playRound("scissors");
-});
+rockBtn.addEventListener("click", () => playRound("rock"));
+paperBtn.addEventListener("click", () => playRound("paper"));
+scissorsBtn.addEventListener("click", () => playRound("scissors"));
 
 let humanScore = 0;
 let computerScore = 0;

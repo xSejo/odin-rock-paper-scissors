@@ -8,53 +8,56 @@ function playRound(humanChoice) {
 
   if (humanChoice === computerChoice) {
     tieCounter++;
-    console.log(`It's a tie!`);
-    return `It's a tie!`;
+    displayResult.textContent = `It's a tie!`;
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
     humanScore++;
-    console.log(`You win ${humanChoice} beats ${computerChoice}`);
-    return `You win ${humanChoice} beats ${computerChoice}`;
+    displayResult.textContent = `You win ${humanChoice} beats ${computerChoice}`;
   } else {
     computerScore++;
-    console.log(`You lose ${computerChoice} beats ${humanChoice}`);
-    return `You lose ${computerChoice} beats ${humanChoice}`;
+    displayResult.textContent = `You lose ${computerChoice} beats ${humanChoice}`;
   }
+
+  roundsPlayed++;
+  roundsPlayed == 5 ? endGame() : 0;
+  // if (roundsPlayed == 5) {
+  //   endGame();
+  // }
 }
 
-function playGame() {
-  humanScore = 0;
-  computerScore = 0;
-  tieCounter = 0;
-
-  /**? Removed for-loop for Easier Testing*/
-  const humanSelection = humanChoice;
-  const computerSelection = getComputerChoice();
-  playRound(humanSelection, computerSelection);
+function endGame() {
+  const displayResult = document.querySelector(".displayResult");
 
   if (humanScore > computerScore) {
-    return `You win!
+    displayResult.textContent = `You win!\n
             Your score: ${humanScore}
             Computer score: ${computerScore}
             You tied against computer ${tieCounter} times`;
   } else if (computerScore > humanScore) {
-    return `You lose!
+    displayResult.textContent = `You lose!\n
             Your score: ${humanScore}
             Computer score: ${computerScore}
             You tied against computer ${tieCounter} times`;
   } else {
-    return `You tied against the computer!
+    displayResult.textContent = `You tied against the computer!\n
             Your score: ${humanScore}
             Computer score: ${computerScore}
             You tied against computer ${tieCounter} times`;
   }
+
+  humanScore = 0;
+  computerScore = 0;
+  tieCounter = 0;
+  roundsPlayed = 0;
 }
 const rockBtn = document.querySelector(".rockBtn");
 const paperBtn = document.querySelector(".paperBtn");
 const scissorsBtn = document.querySelector(".scissorsBtn");
+
+const displayResult = document.querySelector(".displayResult");
 
 rockBtn.addEventListener("click", () => playRound("rock"));
 paperBtn.addEventListener("click", () => playRound("paper"));
@@ -63,4 +66,6 @@ scissorsBtn.addEventListener("click", () => playRound("scissors"));
 let humanScore = 0;
 let computerScore = 0;
 let tieCounter = 0;
-console.log(playGame());
+let roundsPlayed = 0;
+
+console.log(playRound());

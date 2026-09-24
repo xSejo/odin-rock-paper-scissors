@@ -8,9 +8,9 @@ function playRound(humanChoice) {
 
   if (humanChoice === computerChoice) {
     tieCounter++;
-    displayResult.textContent = `It's a tie!\n
-                                 Your score: ${humanScore}\n
-                                 Computer score: ${computerScore}\n`;
+    displayResult.textContent = `It's a tie!
+                                 Your score: ${humanScore}
+                                 Computer score: ${computerScore}`;
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
@@ -34,14 +34,14 @@ function endGame() {
   const displayResult = document.querySelector(".displayResult");
 
   if (humanScore > computerScore) {
-    displayResult.textContent = `YOU WON!!!\n
-                                 Your score: ${humanScore}\n
-                                 Computer score: ${computerScore}\n
+    displayResult.textContent = `YOU WON!!!
+                                 Your score: ${humanScore}
+                                 Computer score: ${computerScore}
                                  You tied against computer ${tieCounter} times`;
   } else {
-    displayResult.textContent = `YOU LOSED!!!\n
-                                 Your score: ${humanScore}\n
-                                 Computer score: ${computerScore}\n
+    displayResult.textContent = `YOU LOSED!!!
+                                 Your score: ${humanScore}
+                                 Computer score: ${computerScore}
                                  You tied against computer ${tieCounter} times`;
   }
 
@@ -62,5 +62,3 @@ scissorsBtn.addEventListener("click", () => playRound("scissors"));
 let humanScore = 0;
 let computerScore = 0;
 let tieCounter = 0;
-
-console.log(playRound());

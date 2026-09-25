@@ -39,7 +39,15 @@ button {
   gap: 1rem;
   margin: 1rem 0em 1rem 0em;
 }
+.currentScore {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+}
 
 .displayResult {
   white-space: pre-line;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
 }

@@ -7,24 +7,22 @@ function playRound(humanChoice) {
   const computerChoice = getComputerChoice();
 
   if (humanChoice === computerChoice) {
-    tieCounter++;
-    displayResult.textContent = `It's a tie!
-                                 Your score: ${humanScore}
-                                 Computer score: ${computerScore}`;
+    displayResult.style.color = "gray";
+    displayResult.textContent = "It's a tie... No one gained points";
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
     humanScore++;
-    displayResult.textContent = `You win ${humanChoice} beats ${computerChoice}
-                                 Your score: ${humanScore}
-                                 Computer score: ${computerScore}`;
+    currentScore.textContent = `${humanScore}:${computerScore}`;
+    displayResult.style.color = "green";
+    displayResult.textContent = `You win ${humanChoice} beats ${computerChoice}`;
   } else {
     computerScore++;
-    displayResult.textContent = `You lose ${computerChoice} beats ${humanChoice}
-                                 Your score: ${humanScore}
-                                 Computer score: ${computerScore}`;
+    currentScore.textContent = `${humanScore}:${computerScore}`;
+    displayResult.style.color = "red";
+    displayResult.textContent = `You lose ${computerChoice} beats ${humanChoice}`;
   }
 
   humanScore === 5 || computerScore === 5 ? endGame() : 0;
@@ -34,15 +32,11 @@ function endGame() {
   const displayResult = document.querySelector(".displayResult");
 
   if (humanScore > computerScore) {
-    displayResult.textContent = `YOU WON!!!
-                                 Your score: ${humanScore}
-                                 Computer score: ${computerScore}
-                                 You tied against computer ${tieCounter} times`;
+    displayResult.style.color = "green";
+    displayResult.textContent = `YOU WON THE GAME VS THE COMPUTER!!!`;
   } else {
-    displayResult.textContent = `YOU LOSED!!!
-                                 Your score: ${humanScore}
-                                 Computer score: ${computerScore}
-                                 You tied against computer ${tieCounter} times`;
+    displayResult.textContent = "red";
+    displayResult.textContent = `YOU LOSED THE GAME VS THE COMPUTER!!!`;
   }
 
   humanScore = 0;
@@ -53,6 +47,7 @@ const rockBtn = document.querySelector(".rockBtn");
 const paperBtn = document.querySelector(".paperBtn");
 const scissorsBtn = document.querySelector(".scissorsBtn");
 
+const currentScore = document.querySelector(".currentScore");
 const displayResult = document.querySelector(".displayResult");
 
 rockBtn.addEventListener("click", () => playRound("rock"));

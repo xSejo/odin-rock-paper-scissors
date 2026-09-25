@@ -1,0 +1,111 @@
+[33mcommit 67b0d059f59a2d546b99356d1f72016e0a8690e0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/rps-ui[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: Joseph Perez <34754176+xSejo@users.noreply.github.com>
+Date:   Fri Sep 25 03:33:44 2026 -0400
+
+    commented out border
+
+[33mcommit 49dd6e41ab33ab01ac04f2249980554e079d16d4[m
+Author: Joseph Perez <34754176+xSejo@users.noreply.github.com>
+Date:   Fri Sep 25 03:23:15 2026 -0400
+
+    Almost have the base setup for the UI
+
+[33mcommit 45527c2f4c1877a1198cc4f8047e67d672df3966[m
+Author: Joseph Perez <34754176+xSejo@users.noreply.github.com>
+Date:   Thu Sep 24 16:13:17 2026 -0400
+
+    added a little bit of css styling
+
+[33mcommit b98c56bed166b34809de42c27e3ab5dbafe3430e[m
+Author: Joseph Perez <34754176+xSejo@users.noreply.github.com>
+Date:   Thu Sep 24 15:49:19 2026 -0400
+
+    Made it so when either computer or human reaches 5 points, the game ends and they win. Also cleaned up a bit!
+
+[33mcommit 813f6740dca118c305dcbcc837d248500da57574[m
+Author: Joseph Perez <34754176+xSejo@users.noreply.github.com>
+Date:   Tue Sep 22 19:20:03 2026 -0400
+
+    1. Added div to display results to user, 2.Changed all console.logs to display to the div on the DOM, 3. Added a rounds played counter, 4. Changed playGame() to endGame() and tweaked it a bit.
+
+[33mcommit 6fc25d68ea92fdf99f0ab619572535f9c6743a0e[m
+Author: Joseph Perez <34754176+xSejo@users.noreply.github.com>
+Date:   Tue Sep 22 17:39:25 2026 -0400
+
+    removed getHumanChoice() function, and moved the getComputerChoice function call into playRound so it only generates once the user clicks one of the buttons
+
+[33mcommit 130a4e000fb2cb1cc42db484e275e744845fde91[m
+Author: Joseph Perez <34754176+xSejo@users.noreply.github.com>
+Date:   Mon Sep 21 12:23:56 2026 -0400
+
+    added buttons for player's selection
+
+[33mcommit 606e8d304dd1321e0d63681f0858a07e6668d427[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Joseph Perez <josephp1521@gmail.com>
+Date:   Wed Dec 24 00:36:57 2025 -0500
+
+    moved js code to script.js
+
+[33mcommit 5d2f4f3acf593b338c85937bf71f02c98785146a[m
+Author: xSejo <34754176+xSejo@users.noreply.github.com>
+Date:   Mon Dec 22 14:52:46 2025 -0500
+
+    Initialize score variables and log playGame result
+
+[33mcommit 29e18f8d15ef9e4d4a9341fcbfccc257c07e3f67[m
+Author: xSejo <34754176+xSejo@users.noreply.github.com>
+Date:   Mon Dec 22 14:51:20 2025 -0500
+
+    Refactor functions for better readability
+
+[33mcommit 5a6985f647a42f8231a057cfb733df406a7e8ace[m
+Author: xSejo <34754176+xSejo@users.noreply.github.com>
+Date:   Mon Dec 22 14:50:19 2025 -0500
+
+    Implement playGame function for game logic
+    
+    Added playGame function to manage game rounds and scoring.
+
+[33mcommit 32bc0646daf0193f2a3dd8c1269ae1ec96f8764e[m
+Author: xSejo <34754176+xSejo@users.noreply.github.com>
+Date:   Mon Dec 22 14:48:20 2025 -0500
+
+    Implement playRound function for game logic
+    
+    Added playRound function to handle game logic.
+
+[33mcommit 0d92cee25b4ea1dedbf3c4406cd76d8880cfc3c7[m
+Author: xSejo <34754176+xSejo@users.noreply.github.com>
+Date:   Mon Dec 22 14:47:13 2025 -0500
+
+    Refactor user choice function for validation
+    
+    Replaced getUserChoice function with getHumanChoice to validate user input.
+    
+    Used prototype.includes instead of a for-loop
+
+[33mcommit b785a84cdb0f63a0a0bef62d59c5172e24e95815[m
+Author: xSejo <34754176+xSejo@users.noreply.github.com>
+Date:   Mon Dec 22 14:46:21 2025 -0500
+
+    Refactor getComputerChoice function for simplicity
+    
+    used array and prototype.includes(instead of a for-loop)
+
+[33mcommit a0f993f70de29c492cdc0f6842a6b23dc9fd7e86[m
+Author: Joseph Perez <josephp1521@gmail.com>
+Date:   Sun Dec 21 19:56:43 2025 -0500
+
+    made two functions for computer and user choice
+
+[33mcommit e3d82dd22cf0a30ddcb91603ffc434675ef348c8[m
+Author: Joseph Perez <josephp1521@gmail.com>
+Date:   Sun Dec 21 19:29:12 2025 -0500
+
+    wrote a little bit of pseudocode
+
+[33mcommit a0a396830313c62741806a0eaa233c01ec2bca9b[m
+Author: xSejo <34754176+xSejo@users.noreply.github.com>
+Date:   Sun Dec 21 19:22:55 2025 -0500
+
+    Initial commit
